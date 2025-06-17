@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Horoscope_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="Horoscope_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,6 +51,7 @@
                                             <outlet property="horoscopeDatesLabel" destination="lN7-2J-zOI" id="RfD-sR-QQz"/>
                                             <outlet property="horoscopeImageView" destination="IBu-Z7-kDr" id="PCl-ER-Imm"/>
                                             <outlet property="horoscopeNameLabel" destination="8OR-a1-Njc" id="aPR-yO-IQJ"/>
+                                            <segue destination="PpR-Na-5bv" kind="show" id="MIG-1V-Nxm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -72,6 +73,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Cqm-vu-whp">
+            <objects>
+                <viewController id="PpR-Na-5bv" customClass="DetailViewController" customModule="Horoscope_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GQS-ty-1Bu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-Rr-pBq">
+                                <rect key="frame" x="0.0" y="59" width="393" height="724"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CE1-dF-ktx">
+                                        <rect key="frame" x="53" y="8" width="303" height="277"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horoscope Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZR-1X-VUq">
+                                        <rect key="frame" x="0.0" y="304" width="393" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horoscope Dates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuN-sh-AYq">
+                                        <rect key="frame" x="0.0" y="336" width="393" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qvm-gx-T7e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lIX-Rr-pBq" firstAttribute="leading" secondItem="qvm-gx-T7e" secondAttribute="leading" id="Jf6-ZQ-xYK"/>
+                            <constraint firstItem="qvm-gx-T7e" firstAttribute="trailing" secondItem="lIX-Rr-pBq" secondAttribute="trailing" id="Qdr-fc-M6g"/>
+                            <constraint firstItem="qvm-gx-T7e" firstAttribute="bottom" secondItem="lIX-Rr-pBq" secondAttribute="bottom" id="X5C-9s-506"/>
+                            <constraint firstItem="lIX-Rr-pBq" firstAttribute="top" secondItem="qvm-gx-T7e" secondAttribute="top" id="fdR-g1-tMG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k6R-Tq-NZr"/>
+                    <connections>
+                        <outlet property="horoscopeDatesLabel" destination="MuN-sh-AYq" id="8IF-NW-DtF"/>
+                        <outlet property="horoscopeImageView" destination="CE1-dF-ktx" id="bZv-VD-Fdn"/>
+                        <outlet property="horoscopeNameLabel" destination="hZR-1X-VUq" id="aL3-bu-5Ut"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WmU-mU-Yam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983.96946564885491" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

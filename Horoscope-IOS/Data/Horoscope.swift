@@ -20,7 +20,7 @@ struct Horoscope {
     }
     
     static let horoscopeList: [Horoscope] = [
-        Horoscope(id: "aries", name: "Aries", dates: "March 21 to April 19", imageFileName: "horoscope-icons/aries"),
+                Horoscope(id: "aries", name: "Aries", dates: "March 21 to April 19", imageFileName: "horoscope-icons/aries"),
                 Horoscope(id: "taurus", name: "Taurus", dates: "April 20 to May 20", imageFileName: "horoscope-icons/taurus"),
                 Horoscope(id: "gemini", name: "Gemini", dates: "May 21 to June 20", imageFileName: "horoscope-icons/gemini"),
                 Horoscope(id: "cancer", name: "Cancer", dates: "June 21 to July 22", imageFileName: "horoscope-icons/cancer"),
